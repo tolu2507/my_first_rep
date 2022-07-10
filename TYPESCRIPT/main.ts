@@ -5,7 +5,7 @@ console.log(message);
 let multiType: number|boolean;
 multiType = 53;
 multiType = false;
-multiType = 76;
+multiType = 76765;
 
 function add(num1: number, num2: number) {
     return num1+num2;
