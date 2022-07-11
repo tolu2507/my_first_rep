@@ -1,11 +1,15 @@
-// let increment = 0;
-// let counters =  document.getElementById("counter");
-// function count() {
-//     increment += 1
-//     counters.innerText = increment;
-// };
+let counters =  document.getElementById("counter");
+let saveEl = document.getElementById("save-el");
+let increment = 0;
+function count() {
+    increment += 1
+    counters.textContent = increment;
+};
 
-// // function save() {
-// //     console.log(increment);
-// // };
+function save() {
+    let save = increment + " - ";
+    saveEl.textContent += save;
+    counters.textContent = 0;
+    increment = 0;
+};
  
