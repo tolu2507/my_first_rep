@@ -33,13 +33,18 @@
 // yet();
 // console.log(cent);
 
-let increment = 0;
-let counters =  document.getElementById("counter");
-function count() {
-    increment += 1
-    counters.innerText = increment;
-};
+// let increment = 0;
+// let counters =  document.getElementById("counter");
+// function count() {
+//     increment += 1
+//     counters.innerText = increment;
+// };
 
-function save() {
-    console.log(increment);
-};
+// // function save() {
+// //     console.log(increment);
+// // };
+ 
+let username = "Tolu";
+let message = "Hi my name is ";
+var myGreeting = message + username + "!" ;
+console.log(myGreeting);
