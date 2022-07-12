@@ -37,9 +37,30 @@ button:hover{
 }
 #apple-shelf{
     display: block;
-    background-color: azure;
+    height: 100px;
+    background-color: rgb(223, 75, 30);
+    margin: 4px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: center;
+    border: 10px solid rgb(165, 182, 167);
+    flex-wrap: wrap;
 }
 #orange-shelf{
     display: block;
+    height: 100px;
     background-color: rgb(15, 97, 97);
+    margin: 4px;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    text-align: center;
+    border: 10px solid rgb(141, 189, 9);
+}
+#apple-shelf:hover{
+    background-color: red
+}
+#orange-shelf:hover{
+    background-color: orange;
 }
