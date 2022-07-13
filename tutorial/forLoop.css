@@ -105,3 +105,40 @@ button:hover{
 #contain:hover{
     background: rgb(245, 110, 20);
 }
+#tin{
+    color:white;
+    margin: 20px auto;
+    width: 200px;
+    text-align: center;
+    background: rgb(78, 3, 45);
+    font-weight: bold;
+    padding: 40px;
+    cursor: pointer;
+}
+#tin:hover{
+    background: rgb(141, 8, 8);
+}
+.team-img{
+    width: 100px;
+    border-radius: 100%;
+    margin: 10px;
+}
+#score{
+    color:white;
+    margin: 20px auto;
+    width: 200px;
+    text-align: center;
+    background: rgb(29, 1, 1);
+    font-weight: bold;
+    padding: 40px;
+    cursor: pointer;
+}
+#score:hover{
+    background: rgb(141, 8, 8);
+}
+#dea{
+    color: goldenrod;
+    text-align: center;
+    text-decoration: double;
+    font-weight: bolder;
+}

@@ -210,11 +210,13 @@ let data = [
 ]
 
 let Jbtn = document.getElementById("jane_id");
+let span = document.querySelector("#dea")
 Jbtn.addEventListener("click", function() {
     for (let i = 0; i < data.length; i++) {
         let element = data[i];
         if (element === data[0]) {
             console.log(element.score);
+            span.textContent += element.score
         }
     }
 })
@@ -228,3 +230,15 @@ function generateSentence(desc, arr) {
     console.log(base);
 }
 generateSentence("The best Fruit", ["mango", "apple", "strawberry", "grape"]);
+
+const tin = document.getElementById("tin");
+const imgs = ["icons.png","icons.png"];
+
+function renderImg() {
+    let ter = "";
+    for (let i = 0; i < imgs.length; i++) {
+        ter +=  `<img alt="picture" class="team-img" src="${imgs[i]}">`
+    }
+    tin.innerHTML = ter
+}
+renderImg();
