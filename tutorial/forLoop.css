@@ -46,6 +46,7 @@ button:hover{
     text-align: center;
     border: 10px solid rgb(165, 182, 167);
     flex-wrap: wrap;
+    padding-top: 35px;
 }
 #orange-shelf{
     display: block;
@@ -57,10 +58,50 @@ button:hover{
     cursor: pointer;
     text-align: center;
     border: 10px solid rgb(141, 189, 9);
+    padding-top: 35px;
 }
 #apple-shelf:hover{
     background-color: red
 }
 #orange-shelf:hover{
     background-color: orange;
+}
+#box{
+    color:white;
+    margin: 20px auto;
+    width: 200px;
+    text-align: center;
+    background: blue;
+    font-weight: bold;
+    padding: 40px;
+    cursor: pointer;
+}
+#box:hover{
+    background: rgb(27, 125, 170);
+}
+#container{
+    color:white;
+    margin: 20px auto;
+    width: 200px;
+    text-align: center;
+    background: rgb(166, 233, 12);
+    font-weight: bold;
+    padding: 40px;
+    cursor: pointer;
+}
+#container:hover{
+    background: rgb(27, 125, 170);
+}
+#contain{
+    color:white;
+    margin: 20px auto;
+    width: 200px;
+    text-align: center;
+    background: rgb(4, 57, 136);
+    font-weight: bold;
+    padding: 40px;
+    cursor: pointer;
+}
+#contain:hover{
+    background: rgb(245, 110, 20);
 }

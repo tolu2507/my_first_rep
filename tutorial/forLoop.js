@@ -125,3 +125,106 @@ function arrangeFruits() {
     }
 }
 arrangeFruits();
+
+let boxBtn = document.getElementById("box");
+boxBtn.addEventListener("mouseover", function() {
+    console.log(" I want to open the box ! ");
+});
+
+const playerName = "Tolu";
+let credits = 45;
+
+let cont = document.getElementById("container");
+
+cont.innerHTML += "<button id='buy_btn' onclick='buy()'>Buy</button>";
+
+function buy() {
+    cont.innerHTML += "<p>Thank you for buying</p>";
+}
+
+const recipient = "James";
+const sender = "Tolu";
+
+const email = `
+Hey ${recipient}!
+ How is it going ? 
+ Cheers ${sender}`;
+console.log(email);
+
+let contEd = document.getElementById("contain");
+function greetUser(user, name, emoji) {
+    contEd.textContent += `${user}, ${name}
+    ${emoji}`;
+}
+greetUser("Hi There", "Bamisile Tolulope Adetayo", "👍");
+
+function add(num1, num2) {
+    return num1 += num2;
+}
+console.log(add(3, 4));
+console.log(add(9, 102));
+
+function getFirst(arr) {
+    let first = arr[0];
+    return first
+}
+console.log(getFirst([1,2,3,4,5,6,7]));
+
+const player = "Per";
+const opponent = "Nick";
+const game = "AmazingFighter";
+
+let points = 0;
+let hasWon = false;
+
+points = 100;
+hasWon = true;
+
+if (hasWon) {
+    console.log(`${player} got ${points} points and won the ${game} game!`);
+}else{
+    console.log(`The winner is ${opponent}!  ${player} lost the game`);
+}
+
+let myCourses = ['Learn CSS Animation', 'UI Design Fundamentals', 'Intro to Clean Code'];
+
+function disPlay(course = []) {
+    for (let i = 0; i < course.length; i++) {
+        console.log(course[i]);
+    }
+}
+disPlay(myCourses)
+
+const view = JSON.parse(localStorage.getItem("vc"))
+console.log(view);
+
+let data = [
+    {
+        player: "Jane",
+        score: 52
+    },
+    {
+        player: "Mark",
+        score: 41
+    }
+]
+
+let Jbtn = document.getElementById("jane_id");
+Jbtn.addEventListener("click", function() {
+    for (let i = 0; i < data.length; i++) {
+        let element = data[i];
+        if (element === data[0]) {
+            console.log(element.score);
+        }
+    }
+})
+
+function generateSentence(desc, arr) {
+    let arrLength = arr.length;
+    let base = `The ${arrLength} ${desc} are `
+    for (let i = 0; i < arr.length; i++) {
+        base += arr[i] + ", ";
+    }
+    console.log(base);
+}
+generateSentence("The best Fruit", ["mango", "apple", "strawberry", "grape"]);
