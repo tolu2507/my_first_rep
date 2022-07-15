@@ -27,112 +27,92 @@ function renderViews(b) {
 }
 renderViews("Tolu's calculator is off, tap the green button ");
 
-let butn = 0;
+let butn = [];
 let sum = "";
-console.log(sum);
 let save = "values- ";
 
-
+function arr() {
+    for (let i = 0; i < butn.length; i++) {
+        renderViews(butn[i]);   
+    }    
+}
 btn_1.addEventListener("click", function() {
-    sum += "1" 
+    butn.push(1);
+    sum += "1"
+    console.log(butn);
+    arr()
 });
 btn_2.addEventListener("click", function() {
+    butn.push(2);
     sum += "2"
+    console.log(butn);
+    arr()
 });
 btn_3.addEventListener("click", function() {
-    sum += "3" 
+    butn.push(3);
+    sum += "3"
+    console.log(butn);
+    arr()
 });
 btn_4.addEventListener("click", function() {
+    butn.push(4);
     sum += "4"
+    console.log(butn);
+    arr()
 });
 btn_5.addEventListener("click", function() {
+    butn.push(5);
     sum += "5";
+    console.log(butn);
+    arr()
 });
 btn_6.addEventListener("click", function() {
+    butn.push(6);
     sum += "6";
+    console.log(butn);
+    arr()
 });
 btn_7.addEventListener("click", function() {
+    butn.push(7);
     sum += "7";
+    console.log(butn);
+    arr()
 });
 btn_8.addEventListener("click", function() {
+    butn.push(8);
     sum += "8";
+    console.log(butn);
+    arr()
 });
 btn_9.addEventListener("click", function() {
+    butn.push(9);
     sum += "9";
+    console.log(butn);
+    arr()
 });
 btn_0.addEventListener("click", function() {
+    butn.push(0);
     sum += "0";
-});
-console.log(sum);
-btn_add.addEventListener("click", function() {
-    for (let i = 0; i < buttons.length; i++) {
-        if (btn_add === buttons[i]) {
-            renderViews(butn += Number(sum));
-            sum = "";
-        }
-        console.log(sum);
-    }
-});
-btn_sub.addEventListener("click", function() {
-    for (let i = 0; i < buttons.length; i++) {
-        if (btn_sub === buttons[i]) {
-            renderViews(butn -= Number(sum));
-            sum = "";
-        }
-    }
-});
-btn_mul.addEventListener("click", function() {
-    for (let i = 0; i < buttons.length; i++) {
-        if (btn_mul === buttons[i]) {
-            renderViews(butn *= Number(sum));
-            sum = "";
-        }
-    }
-}); 
-btn_div.addEventListener("click", function() {
-    for (let i = 0; i < buttons.length; i++) {
-        if (btn_div === buttons[i]) {
-            renderViews(butn /= Number(sum));
-            sum = "";
-        }
-    }
+    console.log(butn);
+    arr()
 });
 btn_md.addEventListener("click", function() {
-    for (let i = 0; i < buttons.length; i++) {
-        if (btn_md === buttons[i]) {
-            renderViews(butn %= Number(sum));
-            sum = "";
-        }
-    }
+    renderViews( butn.reduce((sum, cur)=>{
+        return sum %= cur;
+    }));
+    sum += "%";
+    console.log(sum);
 });
 btn_c.addEventListener("click", function() {
-    for (let i = 0; i < buttons.length; i++) {
-        if (btn_add === buttons[i]) {
-            renderViews(butn += Number(sum));
-            sum = "";
-            break;
-        }else if (btn_div === buttons[i]) {
-            renderViews(butn /= Number(sum));
-            sum = "";
-            break;
-        }else if (btn_mul === buttons[i]) {
-            renderViews(butn *= Number(sum));
-            sum = "";
-            break;
-        }else if (btn_sub === buttons[i]) {
-            renderViews(butn -= Number(sum));
-            sum = "";
-            break;
-        }else if (btn_md === buttons[i]) {
-            renderViews(butn %= Number(sum));
-            sum = "";
-            break;
-        }
-    }
-    save += `${butn}:`
-}); 
+    renderViews(eval(sum));
+    console.log(sum)
+    save += `${eval(sum)}:`
+});
 btn_d.addEventListener("click", function() {
-    sum += "."; 
+    sum += "."
+    butn.push(".");
+    console.log(butn);
+    arr()
 });
 btn_chg.addEventListener("click", function() {
     for (let i = 0; i < buttons.length; i++) {
@@ -140,22 +120,54 @@ btn_chg.addEventListener("click", function() {
         console.log(buttons[i]);
     }
     renderViews("welcome to tolu's calculator 😍")
+    // btn_0.disabled = false;
 });
 btn_chgs.addEventListener("click", function() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
         console.log(buttons[i]);
     }
-    save =""
     renderViews("Tolu's calculator is off, tap the green button ")
+    save = []
+    // btn_0.disabled = true;
 })
 btn_save.addEventListener("click", function() {
     renderViews(save);
+    // save += eval(sum)
 })
 btn_pw.addEventListener("click", function() {
-    butn = 0;
+    butn = [];
     sum = ""
     renderViews(butn);
     console.log(sum);
-    ;
+    console.log(butn);
+});
+btn_add.addEventListener("click", function() {
+    renderViews( butn.reduce((sum, cur)=>{
+        return sum += cur;
+    }));
+    sum += "+";
+    console.log(sum);
+});
+btn_sub.addEventListener("click", function() {
+    renderViews( butn.reduce((sum, cur)=>{
+        return sum -= cur;
+    }), butn); 
+    sum += "-";
+    console.log(sum);
+});
+btn_mul.addEventListener("click", function() {
+    renderViews( butn.reduce((sum, cur)=>{
+        return sum *= cur;
+    }));
+    sum += "*";
+    console.log(sum);
 }); 
+btn_div.addEventListener("click", function() {
+    renderViews( butn.reduce((sum, cur)=>{
+        return sum /= cur;
+    }));
+    sum += "/";
+    console.log(sum);
+});
+  

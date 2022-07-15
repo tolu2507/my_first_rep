@@ -1,0 +1,9 @@
+{
+    "manifest_version": 3,
+    "version": "1.0",
+    "name": "CALCULATOR APP",
+    "action": {
+        "default_popup": "calc.html",
+        "default_icon": "calculator.png"
+    }
+}
