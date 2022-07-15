@@ -139,7 +139,7 @@ let cont = document.getElementById("container");
 cont.innerHTML += "<button id='buy_btn' onclick='buy()'>Buy</button>";
 
 function buy() {
-    cont.innerHTML += "<p>Thank you for buying</p>";
+    cont.innerHTML += "Thank you for buying";
 }
 
 const recipient = "James";
