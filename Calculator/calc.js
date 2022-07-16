@@ -1,161 +1,120 @@
-const btn_1 = document.getElementById("num1");
-const btn_2 = document.getElementById("num2");
-const btn_3 = document.getElementById("num3");
-const btn_4 = document.getElementById("num4");
-const btn_5 = document.getElementById("num5");
-const btn_6 = document.getElementById("num6");
-const btn_7 = document.getElementById("num7");
-const btn_8 = document.getElementById("num8");
-const btn_9 = document.getElementById("num9");
-const btn_0 = document.getElementById("num0");
-const btn_d = document.getElementById("numd");
-const btn_c = document.getElementById("numc");
-const btn_add = document.getElementById("pos");
-const btn_sub = document.getElementById("neg");
-const btn_mul = document.getElementById("mul");
-const btn_div = document.getElementById("div");
-const btn_chg = document.getElementById("chg");
-const btn_chgs = document.getElementById("chgs");
-const btn_pw = document.getElementById("pow");
-const btn_md = document.getElementById("mod");
-const btn_save = document.getElementById("mo");
-let render = document.getElementById("screen");
-const buttons = document.getElementsByClassName("btn");
+class Calculator {
+    constructor(previousOperandTextElement, currentOperandTextElement){
+        this.previousOperandTextElement = previousOperandTextElement
+        this.currentOperandTextElement = currentOperandTextElement
+        this.clear()
+    }
 
-function renderViews(b) { 
-    render.innerHTML = b;
+    clear() {
+        this.currentOperand = ''
+        this.previousOperand = ''
+        this.operation = undefined
+    }
+
+    delete() {
+        this.currentOperand = this.currentOperand.toString().slice(0, -1)
+    }
+
+    appendNumber(number) {
+        if (number === '.' && this.currentOperand.includes('.')) return
+        this.currentOperand = this.currentOperand.toString() + number.toString()
+    }
+
+    chooseOperation(operation) {
+        if (this.currentOperand === '') return
+        if (this.previousOperand !== '') {
+            this.compute()
+        }
+        this.operation = operation
+        this.previousOperand = this.currentOperand
+        this.currentOperand = ''
+    }
+
+    compute() {
+        let computation
+        const prev = parseFloat(this.previousOperand)
+        const current = parseFloat(this.currentOperand)
+        if(isNaN(prev) || isNaN(current)) return
+        switch (this.operation) {
+            case "+":
+                computation = prev + current
+                break;
+            case "-":
+                computation = prev - current
+                break;
+            case "*":
+                computation = prev * current
+                break;
+            case "/":
+                computation = prev / current
+                break;
+            default:
+                return
+        }
+        this.currentOperand = computation
+        this.operation = undefined
+        this.previousOperand = ''
+    }
+
+    getDisplayNumber(number) {
+        const stringNumber = number.toString()
+        const integerDigit = parseFloat(stringNumber.split('.')[0])
+        const decimalDigit = stringNumber.split('.')[1]
+        let integerDisplay
+        if (isNaN(integerDigit)){
+           integerDisplay = ''
+        } else {
+            integerDisplay = integerDigit.toLocaleString('en', {maximumFractionDigits: 0 })
+        }
+        if (decimalDigit != null){
+            return `${integerDisplay}.${decimalDigit}`
+        } else {
+            return integerDisplay
+        }
+    }
+
+    updateDisplay() {
+        this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand)
+        if (this.operation != null) {
+            this.previousOperandTextElement.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`   
+        } else {
+            this.previousOperandTextElement.innerText = ''
+        }
+    }
 }
-renderViews("Tolu's calculator is off, tap the green button ");
-
-let butn = 0;
-let sum = "";
-console.log(sum);
-let save = "values- ";
 
 
-btn_1.addEventListener("click", function() {
-    sum += "1" 
-});
-btn_2.addEventListener("click", function() {
-    sum += "2"
-});
-btn_3.addEventListener("click", function() {
-    sum += "3" 
-});
-btn_4.addEventListener("click", function() {
-    sum += "4"
-});
-btn_5.addEventListener("click", function() {
-    sum += "5";
-});
-btn_6.addEventListener("click", function() {
-    sum += "6";
-});
-btn_7.addEventListener("click", function() {
-    sum += "7";
-});
-btn_8.addEventListener("click", function() {
-    sum += "8";
-});
-btn_9.addEventListener("click", function() {
-    sum += "9";
-});
-btn_0.addEventListener("click", function() {
-    sum += "0";
-});
-console.log(sum);
-btn_add.addEventListener("click", function() {
-    for (let i = 0; i < buttons.length; i++) {
-        if (btn_add === buttons[i]) {
-            renderViews(butn += Number(sum));
-            sum = "";
-        }
-        console.log(sum);
-    }
-});
-btn_sub.addEventListener("click", function() {
-    for (let i = 0; i < buttons.length; i++) {
-        if (btn_sub === buttons[i]) {
-            renderViews(butn -= Number(sum));
-            sum = "";
-        }
-    }
-});
-btn_mul.addEventListener("click", function() {
-    for (let i = 0; i < buttons.length; i++) {
-        if (btn_mul === buttons[i]) {
-            renderViews(butn *= Number(sum));
-            sum = "";
-        }
-    }
-}); 
-btn_div.addEventListener("click", function() {
-    for (let i = 0; i < buttons.length; i++) {
-        if (btn_div === buttons[i]) {
-            renderViews(butn /= Number(sum));
-            sum = "";
-        }
-    }
-});
-btn_md.addEventListener("click", function() {
-    for (let i = 0; i < buttons.length; i++) {
-        if (btn_md === buttons[i]) {
-            renderViews(butn %= Number(sum));
-            sum = "";
-        }
-    }
-});
-btn_c.addEventListener("click", function() {
-    for (let i = 0; i < buttons.length; i++) {
-        if (btn_add === buttons[i]) {
-            renderViews(butn += Number(sum));
-            sum = "";
-            break;
-        }else if (btn_div === buttons[i]) {
-            renderViews(butn /= Number(sum));
-            sum = "";
-            break;
-        }else if (btn_mul === buttons[i]) {
-            renderViews(butn *= Number(sum));
-            sum = "";
-            break;
-        }else if (btn_sub === buttons[i]) {
-            renderViews(butn -= Number(sum));
-            sum = "";
-            break;
-        }else if (btn_md === buttons[i]) {
-            renderViews(butn %= Number(sum));
-            sum = "";
-            break;
-        }
-    }
-    save += `${butn}:`
-}); 
-btn_d.addEventListener("click", function() {
-    sum += "."; 
-});
-btn_chg.addEventListener("click", function() {
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].disabled = false;
-        console.log(buttons[i]);
-    }
-    renderViews("welcome to tolu's calculator 😍")
-});
-btn_chgs.addEventListener("click", function() {
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].disabled = true;
-        console.log(buttons[i]);
-    }
-    save =""
-    renderViews("Tolu's calculator is off, tap the green button ")
+const numberButtons = document.querySelectorAll('[data-number]')
+const operationButtons = document.querySelectorAll('[data-operation]')
+const equalsButton = document.querySelector('[data-equals]')
+const deleteButton = document.querySelector('[data-delete]')
+const allClearButton = document.querySelector('[data-all-clear]')
+const previousOperandTextElement = document.querySelector('[data-previous-operand]')
+const currentOperandTextElement = document.querySelector('[data-current-operand]')
+
+const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
+
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.appendNumber(button.innerText)
+        calculator.updateDisplay()
+    })
 })
-btn_save.addEventListener("click", function() {
-    renderViews(save);
+operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.chooseOperation(button.innerText)
+        calculator.updateDisplay()
+    })
 })
-btn_pw.addEventListener("click", function() {
-    butn = 0;
-    sum = ""
-    renderViews(butn);
-    console.log(sum);
-    ;
-}); 
+equalsButton.addEventListener('click', button => {
+    calculator.compute()
+    calculator.updateDisplay()
+})
+allClearButton.addEventListener('click', button => {
+    calculator.clear()
+    calculator.updateDisplay()
+})
+deleteButton.addEventListener('click', button => {
+    calculator.delete()
+    calculator.updateDisplay()
+})

@@ -7,40 +7,33 @@
         <link rel="stylesheet" href="calc.css">
     </head>
     <body>
-        <div id="calc">
-            <div id="screen">
+        <div class="calc-grid">
+            <div class="screen">
+                <div data-previous-operand class="previous-operand"></div>
+                <div data-current-operand class="current-operand"></div>
             </div>
-            <div id="buttons">
-                <button class="btns" id="chg">ON</button>
-                <button class="btns" id="chgs">OFF</button>
-                <br>
-                <button class="btn" id="num7" disabled>7</button>
-                <button class="btn" id="num8" disabled>8</button>
-                <button class="btn" id="num9" disabled>9</button>
-                <button class="btn" id="pos" disabled>+</button>
-                <br>
-                <button class="btn"id="num4" disabled>4</button>
-                <button class="btn" id="num5" disabled>5</button>
-                <button class="btn" id="num6" disabled>6</button>
-                <button class="btn" id="neg" disabled>-</button>
-                <br>
-                <button class="btn" id="num1" disabled>1</button>
-                <button class="btn" id="num2" disabled>2</button>
-                <button class="btn" id="num3" disabled>3</button>
-                <button class="btn" id="mul" disabled>*</button>
-                <br>
-                <button class="btn" id="numd" disabled>.</button>
-                <button class="btn" id="num0" disabled>0</button>
-                <button class="btn" id="numc" disabled>=</button>
-                <button class="btn" id="div" disabled>/</button>
-                <br>
-                <button class="btn" id="pow" disabled>CLR</button>
-                <button class="btn" id="mo" disabled>ARR</button>
-                <button class="btn" id="mod" disabled>%</button>
-                <br>
-                <span id="sp">Sneh</span>
-            </div>
+            <button data-all-clear class="btn_same">AC</button>
+            <button  data-delete>DEL</button>
+            <button  data-operation>+</button>
+            <button  data-number>7</button>
+            <button  data-number>8</button>
+            <button  data-number>9</button>
+            <button  data-operation>-</button>
+            <button  data-number>4</button>
+            <button  data-number>5</button>
+            <button  data-number>6</button>
+            <button  data-operation>*</button>
+            <button  data-number>1</button>
+            <button  data-number>2</button>
+            <button  data-number>3</button>
+            <button  data-operation>/</button>
+            <button  data-number>.</button>
+            <button  data-number>0</button>
+            <button  data-equals class="btn_same">=</button>
+            <!-- <button id="ON"class="btn_same">ON</button>
+            <button id="OFF"class="btn_same">OFF</button> -->
         </div>
+        <span id="sp">Sneh</span>
         <script src="calc.js"></script>
     </body>
 </html>
