@@ -5,10 +5,214 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-msedge",
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\tetris\\game.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\Calculator\\calc.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\Calculator\\cal.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\Jira_app\\jira_app.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\Jira_app\\jira_index.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\Jira_app\\untitled-.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\tutorial\\blacJack.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\tutorial\\chrome.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\tutorial\\forloop.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\tutorial\\fr.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\tutorial\\welcome.html"
+        },
+        {
+            "type": "msedge",
             "request": "launch",
             "name": "Open index.html",
             "file": "c:\\Users\\TOLU\\vscode_github\\tutorial\\index.html"
-        }
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\azzezment\\bouncingball.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\azzezment\\i.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\azzezment\\map.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\azzezment\\shoppinglist.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\azzezment\\unit.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\gallery-start\\index.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\gallery-start\\object.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\gallery-start\\oopl.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\javascript\\html.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\red\\gui.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\red\\index.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\slider\\New folder\\index.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\slider\\index.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\slider\\Api.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\slider\\slider.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\test-server\\index.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\test-server\\cript.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\uthl\\index.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\uthl\\index-Copy.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\uthl\\reued.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\uthl\\you.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\wed-space\\index.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\Users\\TOLU\\vscode_github\\web-project\\The_TODO_List.html"
+        },
     ]
 }

@@ -1,0 +1,33 @@
+.grid{
+    width: 200px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    background:yellow;
+}
+.grid div{
+    height: 20px;
+    width: 20px;
+    /* background: red; */
+}
+.tetramino{
+    background-color: black;
+}
+.mini_grid{
+    margin: 50px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(49, 214, 16);
+}
+.mini_grid div{
+    height: 20px;
+    width: 20px;
+}
+.mini_grid:hover{
+    background-color: rgb(119, 226, 98) ;
+}
+.container{
+    display: flex;
+}
