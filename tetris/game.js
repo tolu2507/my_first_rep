@@ -48,8 +48,8 @@ const theTetraminos = [ltetromino, ztetromino, ttetromino, otetromino, itetromin
 let currentPosition = 4;
 let currentRotation = 0;
 
-let randomPosition = Math.floor(Math.random()* (theTetraminos.length));
-let current = theTetraminos[randomPosition][currentRotation];
+let random = Math.floor(Math.random()* (theTetraminos.length));
+let current = theTetraminos[random][currentRotation];
 
 function draw() {
     current.forEach(index => {
@@ -93,6 +93,7 @@ function freeze() {
         draw()
         displayShape()
         addScore()
+        gameOver()
     }
 }
 
@@ -126,7 +127,7 @@ function Rotate(){
     if (currentRotation === current.length) {
         currentRotation = 0
     }
-    current = theTetraminos[random][currentRotation];
+    current = theTetraminos[nextRandom][currentRotation];
     draw()
 }
 
@@ -138,7 +139,7 @@ let displayIndex = 0;
 const upNextTetraminoes = [
     [1, displayWidth+1, displayWidth*2+1, 2],
     [0, displayWidth, displayWidth+1, displayWidth*2+1],
-    [0, 1, 2, displayWidth+1],
+    [1, displayWidth, displayWidth+1, displayWidth+2],
     [0, 1, displayWidth+1, displayWidth],
     [1, displayWidth+1, displayWidth*2+1, displayWidth*3+1]
 ]
@@ -159,7 +160,7 @@ button.addEventListener('click', ()=>{
     }else{
         draw();
         timerId = setInterval(moveDown, 1000);
-        nextRandom =  Math.floor(Math.random() * (theTetraminos.length));
+        random =  Math.floor(Math.random() * (theTetraminos.length));
         displayShape()
     }
 })
@@ -169,14 +170,24 @@ function addScore() {
         const row = [i, i+1, i+2, i+3, i+4,i+5, i+6, i+7, i+8, 1+9];
         
         if (row.every(index => squares[index].classList.contains('taken'))) {
-            score += 10;
+            score +=10;
             displayScore.innerHTML = score;
             row.forEach(index => {
-                squares[index].classList.remove('taken')
+                squares[index].classList.remove('taken');
+                squares[index].classList.remove('tetramino')
             }) 
-            const squareRemoved = squares.splice(i, width);
-            console.log(squareRemoved);           
+            const squaresRemoved = squares.splice(i, width);
+            squares = squaresRemoved.concat(squares);
+            squares.forEach(cell => grid.appendChild(cell));       
         }
     }
 }
+
+function gameOver() {
+    if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
+        displayScore.innerHTML = 'end'
+        clearInterval(timerId)
+    }
+}
+
 })
